@@ -1,0 +1,22 @@
+<ScrollView row="1">
+  <StackLayout>
+    <StackLayout class="hr"></StackLayout>
+
+    <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="activeUrl == homePath"
+      (tap)="changeNav([homePath])">
+      <Label col="0" [text]="'fa-home' | fonticon" class="fa"></Label>
+      <Label col="1" [text]="'menu.home' | translate" class="p-l-10 p-t-5 h3"></Label>
+    </GridLayout>
+
+    <StackLayout class="hr"></StackLayout>
+
+    <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="activeUrl == homePath + 'settings'"
+      (tap)="changeNav([homePath, 'settings'])">
+      <Label col="0" [text]="'fa-cog' | fonticon" class="fa"></Label>
+      <Label col="1" [text]="'menu.settings' | translate" class="p-l-10 p-t-5 h3"></Label>
+    </GridLayout>
+
+    <StackLayout class="hr"></StackLayout>
+
+  </StackLayout>
+</ScrollView>

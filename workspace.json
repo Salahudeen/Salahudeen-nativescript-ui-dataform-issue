@@ -1,7 +1,73 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "dataform-nativescript": {
+      "root": "apps/dataform-nativescript/",
+      "sourceRoot": "apps/dataform-nativescript/src",
+      "projectType": "application",
+      "prefix": "dataform",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "architect": {
+        "serve": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "yarn start.dataform.nativescript.preview"
+              }
+            ]
+          }
+        },
+        "ios": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "ns debug ios --no-hmr"
+              }
+            ],
+            "cwd": "apps/dataform-nativescript",
+            "parallel": false
+          }
+        },
+        "android": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "ns debug android --no-hmr"
+              }
+            ],
+            "cwd": "apps/dataform-nativescript",
+            "parallel": false
+          }
+        },
+        "clean": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "npx rimraf -- hooks node_modules platforms package-lock.json"
+              },
+              {
+                "command": "npm i"
+              },
+              {
+                "command": "npx rimraf -- package-lock.json"
+              }
+            ],
+            "cwd": "apps/dataform-nativescript",
+            "parallel": false
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
+    "defaultCollection": "@nstudio/xplat"
   }
 }

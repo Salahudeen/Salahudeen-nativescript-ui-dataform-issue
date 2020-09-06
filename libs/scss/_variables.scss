@@ -1,0 +1,33 @@
+/**
+ * Shared across all platforms and apps
+ * You may define a set of global variables accessible across entire workspace here
+ */
+
+// could use a base theme here, for example:
+// @import '~@angular/material/theming';
+
+// base variables
+@import '~@nativescript/theme/scss/variables';
+
+// base colors
+$grey-slate: #4d4d4d;
+$grey-light: #999999;
+$blue-light: #4ac1fa;
+$grey-darker: #2e2e2e;
+
+// could use a base theme here, for example:
+// @import '~@angular/material/theming';
+@import '~@nativescript/theme/core';
+@import '~@nativescript/theme/default';
+
+// @import '~@nativescript/theme/aqua';
+// @import '~@nativescript/theme/blue';
+// @import '~@nativescript/theme/brown';
+// @import '~@nativescript/theme/forest';
+// @import '~@nativescript/theme/grey';
+// @import '~@nativescript/theme/lemon';
+// @import '~@nativescript/theme/lime';
+// @import '~@nativescript/theme/orange';
+// @import '~@nativescript/theme/purple';
+// @import '~@nativescript/theme/ruby';
+// @import "~@nativescript/theme/sky";

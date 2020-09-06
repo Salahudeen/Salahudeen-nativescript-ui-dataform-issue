@@ -1,0 +1,51 @@
+{
+  "name": "dataform",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "version": "0.0.0",
+  "scripts": {
+    "reset": "npx rimraf -- hooks node_modules platforms && npm run js.clean",
+    "clean": "npm run js.clean",
+    "js.clean": "npx rimraf -- app/**/*.js",
+    "build.ios": "ns build ios --env.uglify --env.production --release",
+    "build.android": "ns build android --env.uglify --env.production --release",
+    "debug.ios": "ns debug ios",
+    "debug.android": "ns debug android",
+    "postinstall": "node ./tools/xplat-postinstall.js && npm run ngcc",
+    "ngcc": "ngcc --properties es2015 module main --first-only"
+  },
+  "dependencies": {
+    "@angular/animations": "~10.0.0",
+    "@angular/common": "~10.0.0",
+    "@angular/compiler": "~10.0.0",
+    "@angular/core": "~10.0.0",
+    "@angular/forms": "~10.0.0",
+    "@angular/platform-browser": "~10.0.0",
+    "@angular/platform-browser-dynamic": "~10.0.0",
+    "@angular/router": "~10.0.0",
+    "@dataform/core": "file:../../libs/core",
+    "@dataform/features": "file:../../libs/features",
+    "@dataform/nativescript": "file:../../xplat/nativescript",
+    "@dataform/nativescript-scss": "file:../../xplat/nativescript/scss",
+    "@dataform/scss": "file:../../libs/scss",
+    "@nativescript/angular": "~10.0.0",
+    "@nativescript/core": "7.0.0",
+    "@nativescript/theme": "^2.3.3",
+    "@ngx-translate/core": "~13.0.0",
+    "nativescript-ngx-fonticon": "~7.0.0",
+    "nativescript-ui-dataform": "^7.0.2",
+    "nativescript-ui-sidedrawer": "^9.0.3",
+    "rxjs": "^6.6.0",
+    "zone.js": "~0.10.2"
+  },
+  "devDependencies": {
+    "@angular/compiler-cli": "~10.0.0",
+    "@angular/language-service": "~10.0.0",
+    "@nativescript/android": "7.0.0",
+    "@nativescript/types": "7.0.0",
+    "@nativescript/webpack": "3.0.0",
+    "@ngtools/webpack": "~10.0.0",
+    "codelyzer": "~6.0.0",
+    "typescript": "~3.9.0"
+  },
+  "main": "main.js"
+}

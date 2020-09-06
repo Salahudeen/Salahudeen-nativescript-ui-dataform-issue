@@ -23,18 +23,57 @@
     "update": "nx migrate latest",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "clean": "npx rimraf -- hooks node_modules package-lock.json && npm i",
+    "start.dataform.nativescript.ios": "cd apps/dataform-nativescript && ns debug ios --no-hmr --emulator",
+    "start.dataform.nativescript.android": "cd apps/dataform-nativescript && ns debug android --no-hmr --emulator",
+    "start.dataform.nativescript.android.device": "cd apps/dataform-nativescript && ns debug android --no-hmr",
+    "clean.dataform.nativescript": "cd apps/dataform-nativescript && npx rimraf -- hooks node_modules platforms package-lock.json && npm i && npx rimraf -- package-lock.json"
   },
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "@angular/animations": "~10.0.0",
+    "@angular/common": "~10.0.0",
+    "@angular/compiler": "~10.0.0",
+    "@angular/core": "~10.0.0",
+    "@angular/forms": "~10.0.0",
+    "@angular/platform-browser": "~10.0.0",
+    "@angular/platform-browser-dynamic": "~10.0.0",
+    "@angular/router": "~10.0.0",
+    "@nativescript/angular": "~10.0.0",
+    "@nativescript/core": "rc",
+    "@nativescript/theme": "^2.3.3",
+    "@ngx-translate/core": "~13.0.0",
+    "nativescript-ngx-fonticon": "~7.0.0",
+    "nativescript-ui-dataform": "^7.0.2",
+    "nativescript-ui-sidedrawer": "^9.0.3",
+    "rxjs": "^6.6.0",
+    "tslib": "~1.11.0",
+    "zone.js": "~0.10.2"
+  },
   "devDependencies": {
     "@nrwl/workspace": "10.1.0",
+    "@nstudio/xplat": "^10.0.6",
     "@types/node": "~8.9.4",
     "dotenv": "6.2.0",
+    "eslint": "6.8.0",
+    "prettier": "2.0.4",
     "ts-node": "~7.0.0",
     "tslint": "~6.0.0",
-    "eslint": "6.8.0",
     "typescript": "~3.9.3",
-    "prettier": "2.0.4"
+    "@nstudio/nativescript-angular": "*",
+    "@nrwl/angular": "~10.0.0",
+    "@nstudio/nativescript": "*",
+    "@nstudio/angular": "*",
+    "node-sass": "^4.12.0",
+    "@nativescript/types": "rc",
+    "@angular/compiler-cli": "~10.0.0",
+    "@angular/language-service": "~10.0.0",
+    "codelyzer": "~6.0.0"
+  },
+  "xplat": {
+    "prefix": "dataform",
+    "framework": "angular",
+    "groupByName": true
   }
 }

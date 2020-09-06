@@ -15,7 +15,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@dataform/*": ["libs/*"],
+      "@dataform/nativescript": ["xplat/nativescript/index.ts"],
+      "@dataform/nativescript/*": ["xplat/nativescript/*"]
+    }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp", "apps/nativescript-*"],
+  "includes": ["xplat/**/*.{ios,android}.ts"]
 }
